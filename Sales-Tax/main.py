@@ -6,18 +6,34 @@
 #
 
 # Variable declarations
+purchase = 0.0
+stateTax = 0.0
+countyTax = 0.0
+totalTax = 0.0
+totalSale = 0.0
 
 # Constants for the state and county tax rates
+STATE_TAX_RATE = 0.05
+COUNTY_TAX_RATE = 0.025
 
 # Get the amount of the purchase.
-purchase_amount = float(input('Enter the amount of the purchase: '))
+purchase = float(input("Enter the amount of the purchase: "))
+
 # Calculate the state sales tax.
-state_sales_tax = purchase_amount * 0.05
+stateTax = purchase * STATE_TAX_RATE
+
 # Calculate the county sales tax.
-county_sales_tax = purchase_amount * 0.025
+countyTax = purchase * COUNTY_TAX_RATE
+
 # Calculate the total tax.
-total_sales_tax = state_sales_tax + county_sales_tax
+totalTax = stateTax + countyTax
+
 # Calculate the total of the sale.
-total_sale_amount = purchase_amount + total_sales_tax
+totalSale = purchase + totalTax
+
 # Print information about the sale.
-print('The sale is $, sale')
+print("Purchase Amount:", format(purchase, '.2f'))
+print("State Tax:", format(stateTax, '.2f'))
+print("County Tax:", format(countyTax, '.2f'))
+print("Total Tax:", format(totalTax, '.2f'))
+print("Sale Total:", format(totalSale, '.2f'))
