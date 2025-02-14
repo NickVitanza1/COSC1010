@@ -50,16 +50,19 @@ minBuns = total // BUNS_PER_PACKAGE
 
 # Determine if the number of people attending is large enough to require more than one package of buns.
 if minBuns > 0:
-    # Calculate the number of hot dogs leftover from a package if any.
+    # Calculate the number of hot dog buns leftover from a package if any.
     bunsLeft = total % BUNS_PER_PACKAGE
    
-    # If there will be leftovers, add an additional package of hot dogs
+    # If there will be leftovers, add an additional package of hot dog buns
     if bunsLeft != 0:
         minBuns += 1
 
-# Set the minimum number of packages of hot dogs to one beause the number of people attending is small enough to require only one package of hot dogs
+# Set the minimum number of packages of hot dog buns to one because the number of people attending is small enough to require only one package of hot dog buns
 else:
     minBuns = 1
+
+# Determine the number of leftover hot dogs, if any.
+bunsLeft = (BUNS_PER_PACKAGE * minBuns) - total
 
 # Display the minimum packages of hot dogs needed.
 print('Minimum packages of hot dogs needed: ', minDogs)
